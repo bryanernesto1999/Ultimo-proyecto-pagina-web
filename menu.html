@@ -22,10 +22,21 @@
       <span class="main-nav__hamburger"></span>
     </label>
     <!-- AQUI EMPIEZA MI SECCION DE MENU -->
+  <div class="main-nav__right">
     <ul class="main-nav__menu">
       <li><a href="#INICIO" class="inicio">INICIO</a></li>
       <li><a href="#NOSOTROS" class="main-nav__link">NOSOTROS</a></li>
-      <li><a href="#ESCUELA Y TALLERES" class="main-nav__link">ESCUELA Y TALLERES</a></li>
+      <li class="submenu-parent">
+      <a href="#ESCUELA Y TALLERES" class="main-nav__arrow">
+        ESCUELA Y TALLERES <span class="arrow">&#9662;</span>
+      </a>
+      <!-- AQUI EMPIEZO MI SUBMENU -->
+      <ul class="main-nav__submenu">
+        <li><a href="#presenciales">Talleres Presenciales</a></li>
+        <li><a href="#virtuales">Talleres Virtuales</a></li>
+        <li><a href="#formacion-actoral">Escuela de Formación Actoral</a></li>
+        </ul>
+      </li>
       <li><a href="#CONTACTO" class="main-nav__link">CONTACTO</a></li>
     </ul>
     <!-- AQUI EMPIEZA MI SECCION DE REDES SOCIALES -->
@@ -35,14 +46,16 @@
       </a>
       <a href="https://www.instagram.com/escena3.producciones/" target="_blank" class="main-nav__social-link">
         <img src="imagen/redes sociales/logo instagram.png" alt="Instagram" class="main-nav__social-icon" />
-      </a>
-      <a href="https://wa.me/935427629" target="_blank" class="main-nav__social-link">
+          </a>
+          <a href="https://wa.me/935427629" target="_blank" class="main-nav__social-link">
         <img src="imagen/redes sociales/logo wsp.png" alt="whatsapp" class="main-nav__social-icon" />
-      </a>
-      <a href="https://www.tiktok.com/@escena3_producciones" target="_blank" class="main-nav__social-link">
+           </a>
+          <a href="https://www.tiktok.com/@escena3_producciones" target="_blank" class="main-nav__social-link">
         <img src="imagen/redes sociales/logo_tik_tok.png" alt="tiktok" class="main-nav__social-icon" />
       </a>
-  </nav>
+    </section>
+  </div>
+</nav>
   <!-- AQUI EMPIEA MI SECCION DE HERO -->
  <main class="contenido-principal">
 
@@ -50,11 +63,11 @@
   <section id="INICIO" class="hero-section">
     <!-- Imagen de fondo + overlay -->
     <div class="hero-media">
-      <div class="hero-bg" style="background-image: url('imagen/cuerpo/pexels-photo-7991579.webp');">
+      <div class="hero-bg" style="background-image: url(imagen/cuerpo/hover-inf-principal.webp);">
         <div class="overlay"></div>
       </div>
 
-      <!-- Texto encima -->
+      <!-- AQUI COLOCO EL TEXTO ENCIMA -->
       <div class="hero-text">
         <div class="headline-group">
           <div class="headline normal">
@@ -70,33 +83,34 @@
       </div>
     </div>
 
-    <!-- SECCIÓN INFERIOR -->
+    <!-- AQUI EMPIEZO LA SECCIÓN INFERIOR -->
     <div class="bottom">
       <div class="container">
         <div class="grid">
           <!-- Lado izquierdo -->
           <div class="lead">
-            <p>Un espacio creado para que artistas y soñadores transformen sus ideas en experiencias únicas.</p>
+            <p>Un espacio creado para que artistas y soñadores transformen sus
+               ideas en experiencias únicas.</p>
             <p>Aquí no solo creamos proyectos, creamos futuros.</p>
 
             <button class="cta-btn">
               VER MÁS
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <svg class="icon" viewBox="0 0 30 30" fill="none" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
           </div>
 
-          <!-- Lado derecho - imágenes -->
+          <!-- Aqui empiezo mi hover inferior -->
           <div class="image-grid">
             <div class="image-tile">
-              <img src="imagen/cuerpo/pexels-photo-7991225.webp" alt="Producción audiovisual 1">
+              <img src="imagen/cuerpo/hover-inf-izq.webp" alt="Producción audiovisual 1">
             </div>
             <div class="image-tile">
-              <img src="imagen/cuerpo/pexels-photo-7991579.webp" alt="Producción audiovisual 2">
+              <img src="imagen/cuerpo/hover-inf-center.jpg" alt="Producción audiovisual 2">
             </div>
             <div class="image-tile">
-              <img src="imagen/cuerpo/pexels-photo-7991456.webp" alt="Producción audiovisual 3">
+              <img src="imagen/cuerpo/hover-inf-der.jpg" alt="Producción audiovisual 3">
             </div>
           </div>
         </div>
@@ -104,9 +118,42 @@
     </div>
   </section>
 
-  <!-- SECCIÓN CONTENIDO -->
-  <section id="contenido" class="main-nav__seccion-contenido">
-    <!-- Aquí agregas más contenido -->
-  </section>
+  <!-- SECCIÓN NOSOTROS -->
+  import React from "react";
 
+function AboutSection() {
+  return (
+    <section id="nosotros" className="section dark">
+      <div className="container">
+        <h2 className="section-title">NOSOTROS</h2>
+        <p className="section-text">
+          En Escena 3 Producciones, nos especializamos en la creación de
+          contenido audiovisual de alta calidad. Nuestro equipo está formado
+          por profesionales apasionados por contar historias a través de la
+          imagen y el sonido.
+        </p>
+
+        <div className="grid">
+          <div className="card">
+            <div className="icon">🎬</div>
+            <h3>Producción</h3>
+            <p>Creamos contenido audiovisual profesional</p>
+          </div>
+          <div className="card">
+            <div className="icon">🎓</div>
+            <h3>Formación</h3>
+            <p>Talleres y cursos especializados</p>
+          </div>
+          <div className="card">
+            <div className="icon">⭐</div>
+            <h3>Talentos</h3>
+            <p>Descubrimos y desarrollamos nuevos talentos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default AboutSection;
 </main>
