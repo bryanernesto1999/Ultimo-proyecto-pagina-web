@@ -4,41 +4,46 @@ body {
   background-color: #000000;
   color: #f7f3f3eb;
 }
+
 .main-nav {
-  background-color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(0, 0, 0);
   flex-wrap: wrap;
 }
+/* seccion de menu */
 .main-nav {
   margin-top: 0;   /* o un valor pequeño */
   padding-top: 0;  /* o un valor pequeño */
 }
-
+/* Aqui es mi logo */
 .main-nav__logo {
   display: flex;
   align-items: center;
   gap: 8.8rem;
-
-  /* contenedor de menu principal */
 }
-.main-nav__right { 
+/* contenedor del menu principal */
+.main-nav__right {
   display: flex;
   align-items: center;
-  gap: 2rem; 
-  margin-left: auto; 
-}
+  gap: 2rem;
+  margin-left: auto;
+} 
+
 .marco-imagen {
   width: 100px;
 }
+
 .main-nav--logo__imagen {
   width: 100%;
 }
+
 .main-nav__toggle {
   display: none;
   text-decoration:none;
 }
+
 .main-nav__menu a.inicio {
   color: red;       /* rojo */
   font-weight: 1500; /* negrita */
@@ -50,9 +55,11 @@ body {
 .main-nav__menu a.inicio:hover {
   color: white;
 }
+
 .main-nav__menu a:hover {
   color: red;
 }
+
 .main-nav__toggle-label {
   display: none;
   flex-direction: column;
@@ -60,39 +67,130 @@ body {
 }
 
 .main-nav__menu {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 2rem;
   margin: 0;
   padding: 0;
   align-items: center;
+}
 
-}
 .main-nav__menu {
-    color: #aa0808;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: color 0.5s;
-    }
+  color: #aa0808;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+}
+
+.main-nav__menu a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+
+.main-nav__menu {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
   
-.main-nav__menu {
-    color: #e43d2d;
+.main-nav__menu a:hover {
+    color: #ff1500;
 }
+
+.main-nav__menu li {
+  position: relative;
+}
+
+/* CONTENEDOR DEL SUBMENÚ */
+.main-nav__submenu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%; /* ⬅️ antes era 100%, ahora baja más */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  list-style: none;
+  padding: 0.6rem 0;
+  min-width: 240px;
+  z-index: 1000;
+  border-radius: 0px; /* ⬅️ SIN bordes redondeados */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  border: none;
+  pointer-events: none;
+}
+
+/* HOVER PARA MOSTRARLO */
+.submenu-parent {
+  position: relative;
+}
+
+.main-nav__submenu {
+  pointer-events: none;
+} 
+
+.submenu-parent:hover .main-nav__submenu,
+.main-nav__submenu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.main-nav__submenu li:last-child {
+  border-bottom: none;
+}
+
+.main-nav__submenu li {
+  padding: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.main-nav__submenu li a {
+  display: block;
+  padding: 0.75rem 1.2rem;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 400;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+}
+
+.main-nav__submenu li a:hover {
+  background-color: transparent; /* o el mismo color del fondo */
+  color: #f11501; /* rojo más fuerte */
+}
+
+/* Flecha */
+.arrow {
+  margin-left: 5px;
+  font-size: 0.7em;
+}
+
 .main-nav__redsocial {
   display: flex;
   gap: 6px;
-  margin-left: 25px; /* espacio entre logos */
+  margin-left: 25px;
 }
+
 
 /* Tamaño fijo para los íconos de redes sociales */
 .main-nav__social-icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: contain; /* para mantener proporción sin deformar */
   display: block;
 }
+
 .main-nav__link {
   text-decoration: none;
   color: #fefefe;
@@ -100,20 +198,17 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
+
 @media (max-width: 768px) {
   .main-nav__toggle-label {
     display: flex;
   }
-  .main-nav__menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .main-nav__toggle:checked + .main-nav__toggle-label + .main-nav__menu {
-    display: flex;
-  }
 }
+
+.main-nav__toggle-label {
+    display: none;
+}
+
 /* HERO PRINCIPAL */
 .hero-section {
   background: #000;
@@ -161,23 +256,249 @@ body {
 .pulse { animation: pulse 1.5s infinite; }
 
 /* SECCIÓN INFERIOR */
-.bottom { padding: 2rem 1rem; background: #000; }
-.container { max-width: 1200px; margin: 0 auto; }
-.grid { display: grid; gap: 2rem; }
-@media(min-width:1024px){ .grid { grid-template-columns: 1fr 1fr; } }
+.bottom { 
+   padding: 2rem 1rem;
+   background: #000;
+   }
 
-.lead p { margin: 0 0 1rem; line-height: 1.6; color: #fff; }
+.container {
+   max-width: 1200px;
+   margin: 0 auto; }
+
+/* Contenedor horizontal para texto e imágenes */
+.grid {
+  display: flex; /* Coloca texto e imágenes uno al lado del otro */
+  gap: 2rem; /* Espacio entre los dos lados */
+  align-items: center; /* Alineación vertical centrada */
+  flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+}
+
+@media(min-width:1024px){ .grid { grid-template-columns: 1fr 1fr;
+ } 
+}
+
+/* Ajuste del bloque de texto izquierdo */ 
+
+.lead {
+  width: 40%; /* Ocupa solo el 40% del ancho para dejar espacio a las imágenes */
+  padding-left: 1rem; /* Espacio interno desde la izquierda */
+  padding-right: 1rem; /* Espacio a la derecha para separar del grid de imágenes */
+  display: flex; /* Usa flexbox para alinear verticalmente */
+  flex-direction: column;
+  font-size: small;
+}
+
+/* Estilo del texto */
+.lead p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-size: 1rem; /* Reducido para una apariencia más limpia */
+}
 
 .cta-btn {
-  background: #fff; color:#000; padding:.6rem 1.2rem; border-radius: 999px;
-  display: inline-flex; align-items: center; gap:.5rem; cursor:pointer;
-  transition: background .3s;
+  background: #fff;
+  color: #000;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  width: fit-content; /* Solo ocupa lo necesario */
 }
-.cta-btn:hover { background: #e5e5e5; }
 
-.image-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-.image-tile { aspect-ratio: 1/1; overflow:hidden; border-radius: 8px; }
-.image-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
-.image-tile:hover img { transform: scale(1.05); }
+/* Flecha del botón debajo de hover */
+.cta-btn .icon {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+}
+
+.cta-btn:hover { 
+  background: #e5e5e5;
+}
+
+.image-grid { 
+  display: grid;
+   grid-template-columns: repeat(3,1fr); 
+   gap: 1rem; 
+}
+/* overlay del texto sobre la iamgen */
+.image-tile { 
+  position: relative;
+  aspect-ratio: 1 / 1;   
+  overflow: hidden; 
+  border-radius: 8px;
+}
+
+.image-tile:hover img {
+  transform: scale(1.05);
+}
+
+.image-tile img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.3s ease; 
+}
+
+/* 🔴 Contenedor de degradado + texto */
+.image-gradient-hover {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: right;
+  padding-right: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+/* Aparece con hover */
+.image-tile:hover .image-gradient-hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 /* aqui empieza mi seccion de nosotros */
+.nosotros-section {
+  background-color: #000000;
+  padding: 8rem 2rem 8rem;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+.nosotros-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.nosotros-image {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: -2rem;
+  margin-left: -3rem;
+}
+
+.nosotros-image img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.nosotros-image:hover img {
+  transform: scale(1.05); /* 🆕 Efecto de zoom */
+}
+
+.nosotros-content {
+  flex: 2 1 400px;
+  padding: 0rem 1rem 0 1rem; /* menos espacio */
+  margin-top: -9.5rem; /* sube el texto hacia la imagen */
+}
+
+.nosotros-content .profesion {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0.5rem; /* 🔧 CAMBIO: Más pegado arriba */
+  font-size: 1rem; /* 🔧 CAMBIO: Tamaño más adecuado */
+  color: white; /* 🔧 CAMBIO: Aseguramos visibilidad */
+}
+
+.nosotros-content .descripcion {
+  font-size: 0.85rem;
+  color: #fff6f6;
+  margin-bottom: 1.5rem;
+  margin-top: 10rem;
+  line-height: 1.4;
+  max-width: 55%; 
+}
+
+.contact-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fd0404;
+  padding-bottom: 0.2rem;
+  display: inline-flex; /* 🔧 CAMBIO: Para alinear texto con flecha */
+  align-items: center;   /* 🔧 CAMBIO: Centrar verticalmente */
+  gap: 1rem;             /* 🔧 CAMBIO: Espacio entre texto y flecha */
+  transition: color 0.3s ease;
+  border: none; /* 🔧 CAMBIO: Quitar línea inferior */
+}
+
+/* flecha debajo de informacin */
+.icon-long {
+  width: 1rem;  /* ⬅️ Puedes aumentar más si la quieres más larga */
+  height: 1rem;
+  stroke: #f4f3f3;  /* color rojo como el texto */
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .icon-long {
+  transform: translateX(5px); /* anima la flecha al pasar el mouse */
+}
+
+.contact-link:hover {
+  color: #fbfbfb;
+  border-color: #e43d2d;
+}
+/* letra de nosotros debajo de pag titulo*/
+.nosotros-title {
+  font-size: 14rem;
+  position: relative;
+  font-weight: 1000;
+  text-align: right;
+  margin-top: 6rem;
+  margin-right: 3rem;
+  color: rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -5px;
+  z-index: 1;
+}
+
+.line-arrow svg {
+  width: 160px;
+  height: auto;
+  stroke: #f11400;
+}
+
+.contact-link:hover svg {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.animated-arrow {
+  width: 160px;
+  height: auto;
+  stroke: #f30909;
+  transition: transform 0.4s ease, width 0.4s ease; /* 🔧 TRANSICIÓN para alargar */
+}
+
+/* Efecto hover en el contenedor del enlace */
+.contact-link:hover .animated-arrow {
+  transform: translateX(10px); /* 🔧 Desplazamiento hacia la derecha */
+  width: 160px; /* 🔧 Aumenta el largo de la flecha */
+}
