@@ -14,8 +14,8 @@ body {
 }
 /* seccion de menu */
 .main-nav {
-  margin-top: 0;   /* o un valor pequeño */
-  padding-top: 0;  /* o un valor pequeño */
+  margin-top: 0;  
+  padding-top: 0;  
 }
 /* Aqui es mi logo */
 .main-nav__logo {
@@ -45,8 +45,8 @@ body {
 }
 
 .main-nav__menu a.inicio {
-  color: red;       /* rojo */
-  font-weight: 1500; /* negrita */
+  color: red;       
+  font-weight: 1500;
   font-size: 1.2em;
   text-decoration: none;
   margin-right: 30px;
@@ -111,7 +111,7 @@ body {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 100%; /* ⬅️ antes era 100%, ahora baja más */
+  top: 100%; 
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
@@ -119,7 +119,7 @@ body {
   padding: 0.6rem 0;
   min-width: 240px;
   z-index: 1000;
-  border-radius: 0px; /* ⬅️ SIN bordes redondeados */
+  border-radius: 0px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   transform: translateY(10px);
   transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
@@ -166,8 +166,8 @@ body {
 }
 
 .main-nav__submenu li a:hover {
-  background-color: transparent; /* o el mismo color del fondo */
-  color: #f11501; /* rojo más fuerte */
+  background-color: transparent; 
+  color: #f11501; 
 }
 
 /* Flecha */
@@ -187,7 +187,7 @@ body {
 .main-nav__social-icon {
   width: 35px;
   height: 35px;
-  object-fit: contain; /* para mantener proporción sin deformar */
+  object-fit: contain; 
   display: block;
 }
 
@@ -242,54 +242,89 @@ body {
   color: #fff;
 }
 
-.headline-group { position: relative; cursor: pointer; }
-.headline { font-size: 2.2rem; font-weight: 300; line-height: 1.1; }
-.normal { transition: opacity .3s; }
-.hovered {
-  position: absolute; inset: 0; display: flex; align-items: center;
-  opacity: 0; transition: opacity .3s;
+.headline-group {
+  position: relative; 
+  cursor: pointer; 
 }
-.headline-group:hover .normal { opacity: 0; }
-.headline-group:hover .hovered { opacity: 1; }
-.big { font-size: 3rem; font-weight: bold; color: #ef4444; }
-@keyframes pulse { 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.05);} }
-.pulse { animation: pulse 1.5s infinite; }
+
+.headline { 
+  font-size: 2.2rem; 
+  font-weight: 300; 
+  line-height: 1.1; 
+}
+
+.normal { 
+  transition: opacity .3s;
+ }
+
+.hovered {
+  position: absolute;
+  inset: 0; 
+  display: flex; 
+  align-items: center;
+  opacity: 0; 
+  transition: opacity .3s;
+}
+
+.headline-group:hover .normal { 
+  opacity: 0; 
+}
+
+.headline-group:hover .hovered { 
+  opacity: 1;
+ }
+
+.big { 
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ef4444; }
+@keyframes pulse { 
+  0%,100%{ transform: scale(1); } 50%{ 
+    transform: scale(1.05);
+  }
+ }
+.pulse { 
+  animation: pulse 1.5s infinite;
+ }
 
 /* SECCIÓN INFERIOR */
 .bottom { 
-   padding: 2rem 1rem;
-   background: #000;
-   }
+  padding: 2rem 1rem;
+  background: #000;
+}
 
 .fondo-degradado-talleres {
   background: linear-gradient(to bottom, #80261d, #ba3427);
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .container {
    max-width: 1200px;
-   margin: 0 auto; }
+   margin: 0 auto; 
+}
 
 /* Contenedor horizontal para texto e imágenes */
 .grid {
-  display: flex; /* Coloca texto e imágenes uno al lado del otro */
-  gap: 2rem; /* Espacio entre los dos lados */
-  align-items: center; /* Alineación vertical centrada */
-  flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+  display: flex;
+  gap: 2rem; 
+  align-items: center; 
+  flex-wrap: wrap;
 }
 
-@media(min-width:1024px){ .grid { grid-template-columns: 1fr 1fr;
+@media
+(min-width:1024px){ 
+  .grid { 
+    grid-template-columns: 1fr 1fr;
  } 
 }
 
 /* Ajuste del bloque de texto izquierdo */ 
-
 .lead {
-  width: 40%; /* Ocupa solo el 40% del ancho para dejar espacio a las imágenes */
-  padding-left: 1rem; /* Espacio interno desde la izquierda */
-  padding-right: 1rem; /* Espacio a la derecha para separar del grid de imágenes */
-  display: flex; /* Usa flexbox para alinear verticalmente */
+  width: 40%; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  display: flex; 
   flex-direction: column;
   font-size: small;
 }
@@ -299,7 +334,7 @@ body {
   margin: 0 0 1rem;
   line-height: 1.6;
   color: #fff;
-  font-size: 1rem; /* Reducido para una apariencia más limpia */
+  font-size: 1rem;
 }
 
 .cta-btn {
@@ -315,7 +350,7 @@ body {
   cursor: pointer;
   border: none;
   transition: background-color 0.3s;
-  width: fit-content; /* Solo ocupa lo necesario */
+  width: fit-content;
 }
 
 /* Flecha del botón debajo de hover */
@@ -334,6 +369,7 @@ body {
    grid-template-columns: repeat(3,1fr); 
    gap: 1rem; 
 }
+
 /* overlay del texto sobre la iamgen */
 .image-tile { 
   position: relative;
@@ -354,7 +390,6 @@ body {
   transition: transform 0.3s ease; 
 }
 
-/* 🔴 Contenedor de degradado + texto */
 .image-gradient-hover {
   position: absolute;
   bottom: 0;
@@ -372,6 +407,7 @@ body {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
 /* Aparece con hover */
 .image-tile:hover .image-gradient-hover {
   opacity: 1;
@@ -396,7 +432,7 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
 }
-
+  
 .nosotros-image {
   flex: 1 1 280px;
   display: flex;
@@ -415,21 +451,21 @@ body {
 }
 
 .nosotros-image:hover img {
-  transform: scale(1.05); /* 🆕 Efecto de zoom */
+  transform: scale(1.05); 
 }
 
 .nosotros-content {
   flex: 2 1 400px;
-  padding: 0rem 1rem 0 1rem; /* menos espacio */
-  margin-top: -9.5rem; /* sube el texto hacia la imagen */
+  padding: 0rem 1rem 0 1rem;
+  margin-top: -9.5rem; 
 }
 
 .nosotros-content .profesion {
   font-weight: bold;
   text-transform: uppercase;
-  margin: 0.5rem; /* 🔧 CAMBIO: Más pegado arriba */
-  font-size: 1rem; /* 🔧 CAMBIO: Tamaño más adecuado */
-  color: white; /* 🔧 CAMBIO: Aseguramos visibilidad */
+  margin: 0.5rem; 
+  font-size: 1rem; 
+  color: white;
 }
 
 .nosotros-content .descripcion {
@@ -446,24 +482,24 @@ body {
   text-decoration: none;
   color: #fd0404;
   padding-bottom: 0.2rem;
-  display: inline-flex; /* 🔧 CAMBIO: Para alinear texto con flecha */
-  align-items: center;   /* 🔧 CAMBIO: Centrar verticalmente */
-  gap: 1rem;             /* 🔧 CAMBIO: Espacio entre texto y flecha */
+  display: inline-flex; 
+  align-items: center;   
+  gap: 1rem;             
   transition: color 0.3s ease;
-  border: none; /* 🔧 CAMBIO: Quitar línea inferior */
+  border: none;
 }
 
 /* flecha debajo de informacin */
 .icon-long {
-  width: 1rem;  /* ⬅️ Puedes aumentar más si la quieres más larga */
+  width: 1rem;  
   height: 1rem;
-  stroke: #f4f3f3;  /* color rojo como el texto */
+  stroke: #f4f3f3; 
   margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
 .cta-btn:hover .icon-long {
-  transform: translateX(5px); /* anima la flecha al pasar el mouse */
+  transform: translateX(5px); 
 }
 
 .contact-link:hover {
@@ -498,27 +534,29 @@ body {
   width: 160px;
   height: auto;
   stroke: #f30909;
-  transition: transform 0.4s ease, width 0.4s ease; /* 🔧 TRANSICIÓN para alargar */
+  transition: transform 0.4s ease, width 0.4s ease; 
 }
 
 /* Efecto hover en el contenedor del enlace */
 .contact-link:hover .animated-arrow {
-  transform: translateX(10px); /* 🔧 Desplazamiento hacia la derecha */
-  width: 160px; /* 🔧 Aumenta el largo de la flecha */
+  transform: translateX(10px); 
+  width: 160px; 
 }
 
 /* aqui empieza mi seccion de talleres */
 
 .talleres-section {
+  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to bottom, #6f1d1b, #a4161a);
   color: white;
-  padding: 1rem 5rem;
+  padding: 40px 20px;
 }
 
 .talleres-content {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .talleres-header {
@@ -538,8 +576,8 @@ body {
 }
 /* titulo de talleres */
 .talleres-izquierda .titulo {
-  font-size: 7rem;
-  font-weight: 750;
+  font-size: 8rem;
+  font-weight: 650;
   margin: 0;
 }
 
@@ -570,7 +608,7 @@ body {
 
 .imagen-taller {
   width: 100%;
-  margin: 2rem auto 2rem auto; /* arriba, laterales, abajo */
+  margin: 2rem 2rem; 
   border-radius: 10px;
   overflow: hidden;
 }
@@ -588,27 +626,36 @@ body {
   background-color: #000;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  padding: 5rem 2rem;
-  text-align: center;
+  padding: 4rem 2rem;
 }
-
+/* Titulo principal contacto */
 .contacto-titulo {
-  font-size: 5rem;
-  font-weight: 800;
+  font-size: 8rem;
+  font-weight: 650;
   color: #888888;
   margin-bottom: 2rem;
+  text-align: left;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.contacto-container {
+  max-width: 1200px;    
+  margin-left: 2rem;       
+  padding: 3rem;        
 }
 
 .contacto-subtitulo {
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 3rem;
+  text-align: left;
 }
 
 .formulario-contacto {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: column;
+  justify-content: flex-start;
   gap: 1.5rem;
   margin-bottom: 4rem;
 }
@@ -635,14 +682,15 @@ body {
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 25px;
-  font-weight: 600;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn-enviar:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transform: scale(1.03);
 }
 
 /* INFORMACIÓN DE CONTACTO */
@@ -657,8 +705,13 @@ body {
   gap: 2rem;
 }
 
+.logo-contacto {
+  margin-left: -1rem; 
+}
+
 .logo-contacto img {
-  height: 80px;
+  text-align: left;
+  height: 90px;
 }
 
 .datos-contacto p {
